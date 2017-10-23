@@ -77,13 +77,13 @@ func parseRequestHeader(c *Client, r *Request) error {
 		hdr[k] = append(hdr[k], r.Header[k]...)
 	}
 
-	if IsStringEmpty(hdr.Get(hdrUserAgentKey)) {
-		hdr.Set(hdrUserAgentKey, fmt.Sprintf(hdrUserAgentValue, Version))
-	}
+	//	if IsStringEmpty(hdr.Get(hdrUserAgentKey)) {
+	//		hdr.Set(hdrUserAgentKey, fmt.Sprintf(hdrUserAgentValue, Version))
+	//	}
 
-	if IsStringEmpty(hdr.Get(hdrAcceptKey)) && !IsStringEmpty(hdr.Get(hdrContentTypeKey)) {
-		hdr.Set(hdrAcceptKey, hdr.Get(hdrContentTypeKey))
-	}
+	//	if IsStringEmpty(hdr.Get(hdrAcceptKey)) && !IsStringEmpty(hdr.Get(hdrContentTypeKey)) {
+	//		hdr.Set(hdrAcceptKey, hdr.Get(hdrContentTypeKey))
+	//	}
 
 	r.Header = hdr
 
